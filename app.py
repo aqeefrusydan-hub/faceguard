@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#<<<<<<< HEAD
 from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 =======
 from detector import load_model, predict_image
->>>>>>> ee23b169 (Updated result.html for image preview)
+#>>>>>>> ee23b169 (Updated result.html for image preview)
 import os
 
 app = Flask(__name__)
