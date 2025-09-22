@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deepfake Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="box">
+    <h2>🔍 Deepfake Detection</h2>
+    <p>Upload an image or video to check if it’s real or fake.</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*,video/*" required>
+      <button type="submit">Detect</button>
+    </form>
+  </div>
+</body>
+</html>

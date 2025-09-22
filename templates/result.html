@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detection Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f8f9fa;
+      padding: 50px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .real {
+      color: green;
+    }
+    .fake {
+      color: red;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background: #0056b3;
+    }
+    img {
+      margin-top: 15px;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+<<<<<<< HEAD
+  <div class="container">
+    <h2>Detection Result</h2>
+    <p><strong>File:</strong> {{ filename }}</p>
+    <p class="result {% if result == 'Real' %}real{% else %}fake{% endif %}">
+      Result: {{ result }}
+    </p>
+    <p><strong>Confidence:</strong> {{ confidence }}%</p>
+
+    <!-- Show uploaded image preview if it's an image -->
+    {% if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png') %}
+      <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+    {% endif %}
+
+    <a href="/">Back to Upload</a>
+  </div>
+=======
+if MODEL:
+    try:
+        result, confidence = predict_image(MODEL, save_path, threshold=0.5)
+    except Exception as e:
+        print("Prediction failed:", e)
+        result, confidence = "Error", 0.0
+else:
+    # fallback if model not loaded
+    result, confidence = "Fake", 87.3
+
+>>>>>>> ee23b169 (Updated result.html for image preview)
+</body>
+</html>
